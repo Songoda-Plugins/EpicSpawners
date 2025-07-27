@@ -157,7 +157,10 @@ public class InteractListeners implements Listener {
             oldEgg.ifPresent(xMaterial -> player.getInventory().addItem(xMaterial.parseItem()));
         }
 
-        SpawnerStack stack = spawner.getFirstStack().setTier(this.plugin.getSpawnerManager().getSpawnerData(itype).getFirstTier());
+        SpawnerStack temp = spawner.getFirstStack();
+        this.plugin.getDataManager().delete(spawner.getFirstStack(), "spawner_id", spawner.getId());
+
+        SpawnerStack stack = temp.setTier(this.plugin.getSpawnerManager().getSpawnerData(itype).getFirstTier());
         this.plugin.getDataManager().save(stack, "spawner_id", spawner.getId());
         try {
             spawner.getCreatureSpawner().setSpawnedType(EntityType.valueOf(this.plugin.getSpawnerManager().getSpawnerData(itype).getIdentifyingName().toUpperCase()));
