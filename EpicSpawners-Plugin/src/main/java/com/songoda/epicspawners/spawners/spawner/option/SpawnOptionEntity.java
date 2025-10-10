@@ -113,7 +113,9 @@ public class SpawnOptionEntity implements SpawnOption {
 
                     this.plugin.getSpawnManager().addUnnaturalSpawn(entity.getUniqueId());
                     return true;
-                }, this.types);
+                },
+                this.types
+        );
 
         spawner.setSpawnCount(spawner.getSpawnCount() + amountSpawned);
         EpicSpawners.getInstance().getDataManager().save((PlacedSpawnerImpl)spawner);
