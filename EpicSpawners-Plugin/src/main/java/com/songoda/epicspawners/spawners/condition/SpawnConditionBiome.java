@@ -8,6 +8,7 @@ import com.songoda.epicspawners.api.spawners.spawner.PlacedSpawner;
 import com.google.common.collect.Iterables;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -38,12 +39,23 @@ public class SpawnConditionBiome implements SpawnCondition {
 
     @Override
     public boolean isMet(PlacedSpawner spawner) {
+        Set<XBiome> allBiomes = Arrays.stream(XBiome.values()).collect(Collectors.toSet());
+        if (this.biomes.equals(allBiomes)) {
+            return true;
+        }
+
         String biomeName = spawner.getLocation().getBlock().getBiome().name();
         XBiome resolvedBiome = getBiomeFromName(biomeName);
+
         return resolvedBiome != null && this.biomes.contains(resolvedBiome);
     }
 
     private XBiome getBiomeFromName(String biomeName) {
+        Optional<XBiome> directMatch = XBiome.of(biomeName);
+        if (directMatch.isPresent()) {
+            return directMatch.get();
+        }
+
         for (XBiome xBiome : XBiome.values()) {
             if (xBiome.name().equalsIgnoreCase(biomeName)) {
                 return xBiome;
