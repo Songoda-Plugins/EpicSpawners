@@ -4,7 +4,7 @@
     <groupId>com.songoda</groupId>
     <artifactId>EpicSpawners-Parent</artifactId>
     <packaging>pom</packaging>
-    <version>9.6.0</version>
+    <version>9.7.0</version>
 
     <modules>
         <module>EpicSpawners-API</module>
@@ -16,7 +16,7 @@
     <url>https://songoda.com/product/epicspawners-11</url>
 
     <properties>
-        <songoda.coreVersion>3.9.9-SNAPSHOT</songoda.coreVersion>
+        <songoda.coreVersion>4.0.0-SNAPSHOT</songoda.coreVersion>
 
         <maven.compiler.release>8</maven.compiler.release>
         <maven.compiler.target>1.8</maven.compiler.target>
