@@ -16,7 +16,7 @@
     <url>https://songoda.com/product/epicspawners-11</url>
 
     <properties>
-        <songoda.coreVersion>4.0.0-SNAPSHOT</songoda.coreVersion>
+        <songoda.coreVersion>4.0.1-SNAPSHOT</songoda.coreVersion>
 
         <maven.compiler.release>8</maven.compiler.release>
         <maven.compiler.target>1.8</maven.compiler.target>
