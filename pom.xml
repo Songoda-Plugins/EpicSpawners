@@ -4,7 +4,7 @@
     <groupId>com.songoda</groupId>
     <artifactId>EpicSpawners-Parent</artifactId>
     <packaging>pom</packaging>
-    <version>9.8.0</version>
+    <version>9.9.0</version>
 
     <modules>
         <module>EpicSpawners-API</module>
